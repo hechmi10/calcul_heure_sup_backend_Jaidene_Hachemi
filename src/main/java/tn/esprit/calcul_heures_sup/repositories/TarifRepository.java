@@ -1,4 +1,9 @@
 package tn.esprit.calcul_heures_sup.repositories;
 
-public interface TarifRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import tn.esprit.calcul_heures_sup.entities.Tarif;
+
+@Repository
+public interface TarifRepository extends JpaRepository<Tarif, Integer> {
 }

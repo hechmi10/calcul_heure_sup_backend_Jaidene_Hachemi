@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class CalculHeuresSupApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(CalculHeuresSupApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(CalculHeuresSupApplication.class, args);
+    }
 
 }
