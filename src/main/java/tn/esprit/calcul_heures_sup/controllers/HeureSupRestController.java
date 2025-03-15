@@ -40,4 +40,9 @@ public class HeureSupRestController {
         return heureSupService.getHeureSups();
     }
 
+    @PutMapping("affect-employe-by-id/{id}")
+    public HeureSup affectEmployeById(@PathVariable int id,@RequestBody HeureSup heureSup){
+        return heureSupService.affectEmployeById(id, heureSup);
+    }
+
 }
