@@ -35,7 +35,7 @@ public class HeureSupServiceImpl implements IHeureSupService {
 
     @Override
     public HeureSup getHeureSup(int id) {
-        return heureSupRepository.findById(id).isPresent() ? heureSupRepository.findById(id).get() : null;
+        return heureSupRepository.findById(id).orElse(null);
     }
 
     @Override
