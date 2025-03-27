@@ -1,5 +1,6 @@
 package tn.esprit.calcul_heures_sup;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import tn.esprit.calcul_heures_sup.entities.HeureSup;
@@ -15,34 +16,34 @@ class GererHeuresSupsTests {
     public void getAllHeuresSup_badRequest_returnFalse(){
         IHeureSupService heureSupService = new HeureSupServiceImpl();
         Set<HeureSup> hs=heureSupService.getHeureSups();
-        assert null != hs;
+        Assertions.assertFalse(hs.isEmpty());
     }
 
     @Test
     public void addHeuresSup_badRequest_returnFalse(){
         IHeureSupService heureSupService = new HeureSupServiceImpl();
         HeureSup hs=heureSupService.addHeureSup(new HeureSup());
-        assert null != hs;
+        Assertions.assertFalse(heureSupService.getHeureSups().contains(hs));
     }
 
     @Test
     public void updateHeuresSup_badRequest_returnFalse(){
         IHeureSupService heureSupService = new HeureSupServiceImpl();
         HeureSup hs=heureSupService.updateHeureSup(1,new HeureSup());
-        assert null != hs;
+        Assertions.assertFalse(heureSupService.getHeureSups().contains(hs));
     }
 
     @Test
     public void deleteHeuresSup_badRequest_returnFalse(){
         IHeureSupService heureSupService = new HeureSupServiceImpl();
         heureSupService.deleteHeureSup(1);
-        assert false;
+        Assertions.assertFalse(heureSupService.getHeureSups().contains(new HeureSup()));
     }
 
     @Test
     public void getHeuresSup_badRequest_returnFalse(){
         IHeureSupService heureSupService = new HeureSupServiceImpl();
         HeureSup hs=heureSupService.getHeureSup(1);
-        assert null != hs;
+        Assertions.assertFalse(heureSupService.getHeureSups().contains(hs));
     }
 }
